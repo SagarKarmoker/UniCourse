@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="fav/favicon.ico">
+  <title>Sign Page with Us</title>
+  <!-- Load Tailwind CSS from CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+  <div class="grid grid-cols-2 h-screen">
+    
+    <div class="flex bg-indigo-600 p-12 flex flex-col justify-center">
+      <h1 class="flex text-2xl font-bold text-white mb-2 justify-center">Sign Up</h1>
+      <p class="flex text-md text-white justify-center space-y-6 mb-6">Let's get started with us</p>
+
+      <!-- Sign Up form -->
+      <div class="flex justify-center">
+          <form class="space-y-6" method="POST" action="signup.php">
+
+            <div>
+              <label for="fname" class="block text-white font-semibold mb-2">First Name</label>
+              <input id="fname" type="text" name="fname" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white pr-24" required autofocus placeholder="Enter your First Name">
+            </div>
+
+            <div>
+              <label for="lname" class="block text-white font-semibold mb-2">Last Name</label>
+              <input id="lname" type="text" name="lname" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white" required autofocus placeholder="Enter your Last Name">
+            </div>
+
+            <div>
+              <label for="email" class="block text-white font-semibold mb-2">Email</label>
+              <input id="email" type="email" name="email" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white" required autofocus placeholder="Enter your email">
+            </div>
+    
+            <div>
+              <label for="password" class="block text-white font-semibold mb-2 mt-4">Password</label>
+              <input id="password" type="password" name="password" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white" required placeholder="Enter your password">
+            </div>
+
+            <div>
+              <label for="con_password" class="block text-white font-semibold mb-2 mt-4">Confirm Password</label>
+              <input id="con_password" type="password" name="con_password" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white" required placeholder="Confirm your password">
+            </div>
+
+            <div>
+              <label for="profession" class="block text-white font-semibold mb-2">Profession</label>
+              <select name="profession" id="profession" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white" required autofocus placeholder="Enter your profession">
+                <option value="" class="bg-white hover:bg-gray-100">Select</option>
+                <option value="student" class="bg-white hover:bg-gray-100">Student</option>
+                <option value="job-holder" class="bg-white hover:bg-gray-100">Job Holder</option>
+                <option value="self-learner" class="bg-white hover:bg-gray-100">Self Learner</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="address" class="block text-white font-semibold mb-2">Address</label>
+              <input id="address" type="text" name="address" class="w-full border border-white p-2 rounded-2xl focus:outline-none focus:border-white" required autofocus placeholder="Enter your address">
+            </div>
+    
+            <input type="submit" class="w-full bg-white text-indigo-600 py-2 px-4 rounded-3xl hover:bg-gray-100 transition duration-200 mt-8 font-semibold" value="Sign Up">
+    
+          </form>
+      </div>
+
+      <div class="flex justify-center items-center mt-8">
+        <div class="text-white">Already have an account?</div>
+        <a href="#" class="text-white font-semibold hover:underline ml-2">Login</a>
+      </div>
+    </div>
+
+    <div class="bg-[#FDFEF6] p-12 flex flex-col justify-center">
+      <h1 class="text-2xl font-bold mb-6 text-center">Welcome to UniCourse!</h1>
+      <p class="text-lg mb-8 font-bold text-center">Join With US</p>
+      <img src="images/join.jpg" alt="Coffee" class="w-full mx-auto mb-8">
+      <div class="text-gray-600 text-center">
+        <blockquote class="italic mb-4">"Being a student is easy. Learning requires actual work."</blockquote>
+        <cite>- William Crawford</cite>
+      </div>
+    </div>
+    
+  </div>
+
+</body>
+
+</html>
