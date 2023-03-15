@@ -1,2 +1,2 @@
 # UniCourse
-CSE347 Course Repo
+CSE347 Course Project Repo
