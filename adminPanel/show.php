@@ -32,6 +32,9 @@
   </nav>
   <!-- Student Details -->
   <?php
+
+use LDAP\Result;
+
   $servername = "localhost:4306";
   $username = "root";
   $password = "";
@@ -42,6 +45,7 @@
   // Retrieve data from the "users" table
   $query = "SELECT * FROM userdetails";
   $result = mysqli_query($conn, $query);
+
 
   // Check if any records were found
   if (mysqli_num_rows($result) > 0) {
@@ -66,6 +70,9 @@
 
     // Loop through each record and add it to the table
     while ($row = mysqli_fetch_assoc($result)) {
+      // session_start();
+      $_SESSION['data'] = $row['Uid'];
+
       echo '<tr>';
       echo '<td class="px-6 py-4 whitespace-nowrap">' . $row['Uid'] . '</td>';
       echo '<td class="px-6 py-4 whitespace-nowrap">' . $row['Fname'] . '</td>';
@@ -75,7 +82,8 @@
       echo '<td class="px-6 py-4 whitespace-nowrap">' . $row['Address'] . '</td>';
       echo '<td class="px-6 py-4 whitespace-nowrap">' . $row['DoR'] . '</td>';
       echo '<td class="px-6 py-4 whitespace-nowrap">' . $row['Role'] . '</td>';
-      echo '<td class="px-6 py-4 whitespace-nowrap"><a href="#" onclick="openModal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Courses</a></td>';
+      echo '<td class="px-6 py-4 whitespace-nowrap"><a href="#' . $row['Uid'] . '" onclick="openModal()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View Courses</a></td>';
+
       echo '<td class="px-6 py-4 whitespace-nowrap"><a href="' . '" class="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Block/Unblock</a></td>';
       echo '</tr>';
     }
@@ -88,7 +96,7 @@
   }
 
   // Close the database connection
-  mysqli_close($conn);
+  // mysqli_close($conn);
   ?>
 
   <!-- Modal -->
@@ -131,13 +139,18 @@
                 die("Connection failed: " . $conn->connect_error);
               }
 
+              // session_start();
+              $data = $_SESSION['data'];
+              echo $data;
+
               // Retrieve data from the database
-              $sql = "SELECT course_code, course_name, date_enrolled, finish_date, status FROM stdEnrolled";
+              $sql = "SELECT course_code, course_name, date_enrolled, finish_date, status FROM stdEnrolled where Uid = '$data'";
               $result = $conn->query($sql);
 
               // Display data in table rows
-              if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
+              if (mysqli_num_rows($result) > 0) {
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo $row["course_code"];
                   echo "<tr>";
                   echo "<td class='border px-4 py-2'>" . $row["course_code"] . "</td>";
                   echo "<td class='border px-4 py-2'>" . $row["course_name"] . "</td>";
