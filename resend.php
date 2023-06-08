@@ -1,15 +1,9 @@
 <?php
+include 'dbconfig.php';
+
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // connect to the database
-    $servername = "localhost";
-    $username = "id20422756_sagar";
-    $password = "E1L@KQ5jY[6@C22#";
-    $dbname = "id20422756_project";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
     $email = $_POST['email'];
 
     if (isset($email)) {

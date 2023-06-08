@@ -1,11 +1,6 @@
 <?php
-// Connect to the database
-$servername = "localhost:4306";
-$username = "root";
-$password = "";
-$dbname = "cse347_project";
-// Establish a database connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+include 'dbconfig.php';
+
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }

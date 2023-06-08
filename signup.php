@@ -1,15 +1,8 @@
 <?php
+include 'dbconfig.php';
 session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // connect to the database
-    $servername = "localhost:4306";
-    $username = "root";
-    $password = "";
-    $dbname = "cse347_project";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
     // generating uid
     $std = 'std@';
     $id = rand(10000000, 99999999);
@@ -36,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // email doesn't exist, proceed with storing the user details
             $hashed_password = password_hash($password, PASSWORD_DEFAULT); // hash the password using the default algorithm
             // store the hashed password in the database
-            $sql = "insert into userdetails (Uid, Fname, Lname, Email, Password, Profession, Address, Role) values ('$uid','$fname','$lname', '$email', '$hashed_password', '$profession', '$address', '$role')";
+            $sql = "insert into userdetails (Uid, Fname, Lname, Email, Password, Profession, Address, Role, lock_status) values ('$uid','$fname','$lname', '$email', '$hashed_password', '$profession', '$address', '$role', 'Unlocked')";
             if ($conn->query($sql)) {
                 // echo "User registered successfully!";
                 $_SESSION['loggedin'] = true;
@@ -52,8 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $to = $email;
                 $subject = 'Verify Your Email Address';
                 $message = "Please click the following link to verify your email address:\n\n";
-                $message .= "http://localhost/project/verify.php?email=$email&code=$veri_code";
-                $headers = "From: sagar@unicourse.com";
+                $message .= "https://unicourse.helloworlddev.software/verify.php?email=$email&code=$veri_code";
+                $headers = "From: admin@unicourse.helloworlddev.software";
 
                 mail($to, $subject, $message, $headers);
 

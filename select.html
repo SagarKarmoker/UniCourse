@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student or Instructor Selection Page</title>
+    <!-- Include Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        max-width: 600px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-200">
+    <div class="container bg-white p-10 rounded-lg shadow-lg border w-fit">
+        <div class="flex items-center justify-center mb-2"> 
+            <img src="fav/favicon.ico" alt="UniCourse-logo" class="mx-2"> 
+            <span class="font-bold uppercase">UniCourse</span>
+        </div>
+      <h1 class="text-2xl font-bold mb-5 text-center">Welcome! Get started with us</h1>
+      <p class="mb-5 text-center">
+        Please select whether you're a student or an instructor to get started.
+      </p>
+      <div class="flex justify-center gap-x-8">
+        <a href="signup.html"
+          class=" bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded"
+        >
+          Student
+        </a>
+        <a href="instructor/signup.php"
+          class=" bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
+        >
+          Instructor
+        </a>
+      </div>
+    </div>
+  </body>
+</html>

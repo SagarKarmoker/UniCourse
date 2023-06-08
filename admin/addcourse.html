@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="input.js"></script> -->
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="flex flex-col items-center justify-center h-screen">
+        <form id="multi-stage-form" class="bg-slate-200 rounded-lg p-10" action="courseData.php" method="post"
+            enctype="multipart/form-data">
+            <!-- stage 1 -->
+            <div class="stage stage1" data-stage="1">
+                <h2 class="text-xl font-bold mb-5">Create Course (Stage 1)</h2>
+                <div class="grid grid-cols-2 gap-x-3 rounded-lg">
+                    <div class="grid grid-flow-row">
+                        <label for="course_name" class="pt-2 font-bold">Course Name</label>
+                        <input type="text" name="course_name" id="course_name" class="px-2 py-2 w-64 rounded-lg border"
+                            required>
+                    </div>
+                    <div class="grid grid-flow-row">
+                        <label for="course_code" class="pt-2 font-bold">Course Code</label>
+                        <input type="text" name="course_code" id="course_code" class="px-2 py-2 w-64 rounded-lg border"
+                            required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1">
+                    <label for="description" class="pt-2 font-bold">Course Short Description</label>
+                    <textarea name="description" id="description" class="rounded-lg border p-2" required></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-x-3 rounded-lg">
+                    <h1 class="col-span-2 pt-2 font-bold">What student will learn?</h1>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="whatlearn1" id="whatlearn1" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="1" required>
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="whatlearn2" id="whatlearn2" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="2" required>
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="whatlearn3" id="whatlearn3" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="3" required>
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="whatlearn4" id="whatlearn4" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="4" required>
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="whatlearn5" id="whatlearn5" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="5" required>
+                    </div>
+                </div>
+                <div class="grid grid-cols-1">
+                    <label for="thumbnail" class="pt-2 font-bold">Thumbnail</label>
+                    <input type="file" name="thumbnail" id="thumbnail" class="rounded-lg border p-2 bg-white file:rounded-full file:border-0 file:bg-violet-50 file:text-violet-700
+                    hover:file:bg-violet-100 file:font-bold file:p-2" required>
+                </div>
+                <div class="grid grid-cols-1">
+                    <label for="about" class="pt-2 font-bold">About The Course</label>
+                    <textarea name="about" id="about" rows="5" class="rounded-lg border p-2" required></textarea>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" class="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 items-end"
+                        id="next-btn">Next</button>
+                </div>
+            </div>
+
+            <!-- stage 2 -->
+            <div class="stage hidden" data-stage="2">
+                <h2 class="text-xl font-bold mb-5">Create Course (Stage 2)</h2>
+                <div class="grid grid-cols-2 gap-x-3 rounded-lg">
+                    <h1 class="col-span-2 pt-2 font-bold">SKILLS STUDENTS WILL GAIN (Tags)</h1>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="tags1" id="tags1" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="1">
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="tags2" id="tags2" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="2">
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="tags3" id="tags3" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="3">
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="tags4" id="tags4" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="4">
+                    </div>
+                    <div class="grid grid-flow-row pb-2">
+                        <input type="text" name="tags5" id="tags5" class="px-2 py-2 w-64 rounded-lg border"
+                            placeholder="5">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-x-3 rounded-lg">
+                    <div class="grid grid-flow-row">
+                        <label for="instructor_name" class="pt-2 font-bold">Instructor Name</label>
+                        <input type="text" name="instructor_name" id="instructor_name"
+                            class="px-2 py-2 w-64 rounded-lg border disabled:bg-gray-100 cursor-not-allowed">
+                    </div>
+                    <div class="grid grid-flow-row">
+                        <label for="instructor_id" class="pt-2 font-bold">Instructor ID</label>
+                        <input type="text" name="instructor_id" id="instructor_id"
+                            class="px-2 py-2 w-64 rounded-lg border disabled:bg-gray-100 cursor-not-allowed">
+                    </div>
+                </div>
+                <div class="grid grid-cols-1">
+                    <label for="instructor_img" class="pt-2 font-bold">Instructor Image</label>
+                    <input type="file" name="instructor_img" id="instructor_img" class="rounded-lg border p-2 bg-white file:rounded-full file:border-0 file:bg-violet-50 file:text-violet-700
+                    hover:file:bg-violet-100 file:font-bold file:p-2" required>
+                </div>
+                <div class="grid grid-cols-2 gap-x-3 rounded-lg">
+                    <div class="grid grid-flow-row">
+                        <label for="price" class="pt-2 font-bold">Price</label>
+                        <input type="text" name="price" id="price" class="px-2 py-2 w-64 rounded-lg border">
+                    </div>
+                    <div class="grid grid-flow-row">
+                        <label for="duration" class="pt-2 font-bold">Course Duration</label>
+                        <input type="text" name="duration" id="duration" class="px-2 py-2 w-64 rounded-lg border">
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-x-3 rounded-lg">
+                    <div class="grid grid-flow-row">
+                        <label for="module" class="pt-2 font-bold">How many module</label>
+                        <input type="text" name="module" id="module" class="px-2 py-2 w-64 rounded-lg border">
+                    </div>
+                    <div class="grid grid-flow-row">
+                        <label for="course_level" class="pt-2 font-bold">Course Level</label>
+                        <input type="text" name="course_level" id="course_level"
+                            class="px-2 py-2 w-64 rounded-lg border">
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <button type="button" id="prev-btn" class="bg-gray-500 text-white px-4 py-2 rounded-md mt-2 mr-5"
+                        id="prev-btn">Previous</button>
+                    <button type="submit"
+                        class="bg-blue-500 text-white px-4 py-2 rounded-md mt-2 items-end">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const form = document.querySelector('#multi-stage-form');
+        const stages = form.querySelectorAll('.stage');
+        const prevBtn = form.querySelector('#prev-btn');
+        const nextBtn = form.querySelector('#next-btn');
+
+        let currentStage = 1;
+
+        function showStage(stageNumber) {
+            stages.forEach((stage) => {
+                if (stage.dataset.stage == stageNumber) {
+                    stage.classList.remove('hidden');
+                } else {
+                    stage.classList.add('hidden');
+                }
+            });
+        }
+
+        showStage(currentStage);
+
+        nextBtn.addEventListener('click', () => {
+
+            event.preventDefault();
+
+            let isValid = true;
+            const stage1 = document.querySelector('.stage1'); // select the div element by its ID
+            const inputFields = stage1.querySelectorAll('input, textarea, input[type=file]'); // select all input, textarea & file input elements inside the div
+
+            console.log(inputFields);
+
+            for (let i = 0; i < inputFields.length; i++) {
+                if (!inputFields[i].value) {
+                    isValid = false;
+                    break; // Stop checking further input fields
+                }
+            }
+
+            if (isValid) {
+                // All fields are filled, process the form data
+                const formData = new FormData(form);
+                // console.log(formData);
+
+                if (currentStage < stages.length) {
+                    currentStage++;
+                    showStage(currentStage);
+                }
+
+                // TODO: Process the form data
+            } else {
+                alert('Please fill in all required fields.');
+            }
+        });
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStage > 1) {
+                currentStage--;
+                showStage(currentStage);
+            }
+        });
+
+        // form.addEventListener('submit', (event) => {
+        //     event.preventDefault();
+        //     const formData = new FormData(form);
+        //     console.log(formData);
+        //     // TODO: Process the form data
+        // });
+
+        // const form = document.querySelector('form');
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            let isValid = true;
+            const inputFields = form.querySelectorAll('input, file, textarea');
+
+            for (let i = 0; i < inputFields.length; i++) {
+                if (!inputFields[i].value) {
+                    isValid = false;
+                    break; // Stop checking further input fields
+                }
+            }
+
+            if (isValid) {
+                var form_data = new FormData(form); // create a new FormData object with the form data
+                form_data.append('action', 'add_course'); // add a custom action parameter to identify the request
+
+                $.ajax({
+                    url: 'courseData.php',
+                    type: 'POST',
+                    data: form_data,
+                    dataType: 'json',
+                    processData: false,
+                    contentType: false,
+                    success: function (response) {
+                        console.log(response);
+                        const getcid = response.message;
+                        // handle the response from the server
+			            window.location.href = "stage3.php?cid=" + getcid;
+                    },
+                    error: function (xhr, status, error) {
+                        console.log(error);
+                        // handle any errors that occur during the request
+                    }
+                });
+            }
+        });
+
+    </script>
+</body>
+
+</html>

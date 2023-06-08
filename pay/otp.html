@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load the Tailwind CSS framework -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.0.4/tailwind.min.css" integrity="sha512-r5R5hc5FJz+7pZqKcEwO3QxCK05G0M6uqX9Uk7VU2vLwljP6nRoPf+Aj7HJl1m8eBhYKSsCtTz81o4v4egLWyg==" crossorigin="anonymous" />
+</head>
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+
+<!-- Nav Bar -->
+<nav id="header" class="fixed w-full z-10 top-0 bg-white shadow">
+
+    <div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 py-2">
+
+        <div class="pl-4 flex items-center">
+            <a class="text-gray-900 text-base no-underline hover:no-underline font-extrabold text-xl" href="#">
+                OTP Verification
+            </a>
+        </div>
+
+        <div class="block lg:hidden pr-4">
+            <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-900 hover:border-teal-500 appearance-none focus:outline-none">
+                <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 0h20v2H0V0zm0 7h20v2H0V7zm0 7h20v2H0v-2z"/></svg>
+            </button>
+        </div>
+
+        <div class="w-full flex-grow lg:flex lg:items-center lg:w-auto hidden lg:block pt-6 lg:pt-0" id="nav-content">
+            <ul class="list-reset lg:flex justify-end flex-1 items-center">
+                <li class="mr-3">
+                    <a class="inline-block py-2 px-4 text-gray-900 font-bold no-underline" href="#">Home</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="#">About</a>
+                </li>
+                <li class="mr-3">
+                    <a class="inline-block text-gray-600 no-underline hover:text-gray-900 hover:text-underline py-2 px-4" href="#">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- OTP Verification Form -->
+<div class="container mx-auto mt-16">
+    <div class="md:flex justify-center md:-mx-4 ">
+        <div class="px-4 mb-8 md:mb-0 w-full md:w-1/2 ">
+            <form action="#" method="POST" class="border bg-white rounded-lg shadow px-8 pt-6 pb-8 mb-4">
+                <h2 class="text-xl font-bold mb-6">Enter OTP</h2>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-bold mb-2" for="otp">
+                        OTP
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="otp" type="text" placeholder="Enter OTP" required>
+                </div>
+                <div class="flex items-center justify-between">
+                    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline">
+                        Verify
+                    </button>
+                    <a href="#" class="inline-block align-baseline font-bold text-sm text-blue-500 hover:text-blue-800">Resend OTP</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
