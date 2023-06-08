@@ -59,6 +59,7 @@ Technologies used in the project:
 *   TailwindCSS
 *   PHP
 *   Javascript
+*   BunnyCDN (Video Hosting)
 *   Alibaba Cloud (Hosting)
 
 <h2>🛡️ License:</h2>
