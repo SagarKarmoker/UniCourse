@@ -13,7 +13,28 @@ CSE347 Course Project Repo
 
 <h2>Project Screenshots:</h2>
 
-<img src="https://pasteboard.co/vAAHCEK3oshq.png" alt="project-screenshot" width="400" height="400/">
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/9f9d1d21-8320-4c27-b77f-0a4997f12417)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/ef6b77b3-fae6-4321-8342-0f3cacc4c7ab)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/411d6875-c060-4462-8570-c45202cf210b)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/5cee263e-a0e6-418a-896e-11a8d617260c)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/634a7a9d-4342-49af-bede-a91a1608f1ee)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/68ff4c10-b023-4a6f-ad35-be00aa13f0ea)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/7f93a355-8362-4957-8ee2-3974e9d471c9)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/2768e1e0-c471-457c-bbda-3595e86f58b9)
+Admin
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/d3d75437-a52b-4bd7-a535-45c8e4d9ae94)
+Instructor
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/a677ca84-f0c0-42e5-837a-2c6435e2c9b7)
+Student
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/73faf33f-5667-4247-b9fd-ff4cafc09017)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/d74a772b-2004-41bd-bf39-571aaad0ce64)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/37f2bd7c-f86a-439d-889a-6858f5b7e4ab)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/d3c04d72-7c74-4c5b-acc5-f9b43c1d2b4c)
+![image](https://github.com/SagarKarmoker/UniCourse/assets/98447327/65da7dcd-c62c-478d-a8ad-1dfe8f19bc50)
+
+
+
+
 
   
   
